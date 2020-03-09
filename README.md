@@ -7,9 +7,13 @@
 - Java 11
 
 ## How to run
-
-- from the root of the project cd deps.
-- docker compose up -d for startup a mongo in a container.
+Local: 
+  - from the root of the project cd deps.
+  - docker compose up -d for startup a mongo in a container.
+  
+  Cloud:
+  
+  https://beshortenerurl.herokuapp.com/shorteners
 
 ## API Documantion endpoints
 
