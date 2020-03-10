@@ -31,5 +31,8 @@ Local:
   https://beshortenerurl.herokuapp.com/shorteners
 
 ## API Documantion endpoints
-
-http://localhost:8080/swagger-ui.html
+Local: 
+  http://localhost:8080/swagger-ui.html
+ 
+ Cloud:
+  https://beshortenerurl.herokuapp.com/shorteners/swagger-ui.html
