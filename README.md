@@ -35,4 +35,4 @@ Local:
   http://localhost:8080/swagger-ui.html
  
  Cloud:
-  https://beshortenerurl.herokuapp.com/shorteners/swagger-ui.html
+  https://beshortenerurl.herokuapp.com/swagger-ui.html
