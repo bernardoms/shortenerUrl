@@ -2,9 +2,11 @@
 
 ## Technologies
 - MongoDB 4
+
 Used for this project because it's just a collection with a count of redirect, original url and the alias, so don't need complex relationship between the objects and with mongoDB I can scale up and down the database.
 
 - Docker
+
 Used for create application image and run on container for be able to run many instancies in one machine, and for replicate the same enviroment between the instancies. For local is used to bring up a mongodb instancie for be able to run the code in a similar way of the production.
 
 - Spring-Boot 2.2.5
