@@ -9,12 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
@@ -29,16 +24,18 @@ public class ShortenerService {
         return urlShortener.getAlias();
     }
 
-
     public String redirect(String alias) throws AliasNotFoundException {
         var urlShortener = findURLByAlias(alias);
 
         urlShortener.setRedirectCount(urlShortener.getRedirectCount() + 1);
 
+        log.info("incrementing redirect count " + urlShortener.getRedirectCount());
+
         shortenerRepository.save(urlShortener);
 
         return urlShortener.getOriginalURL();
     }
+
 
     public URLShortener findURLByAlias(String alias) throws AliasNotFoundException {
         return shortenerRepository.findByAlias(alias).orElseThrow(() -> {
