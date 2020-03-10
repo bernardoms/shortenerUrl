@@ -15,11 +15,11 @@ Used Spring because of the abstracions of the framework and the easy and faster 
 
 - Java 11
 
-Used Java version 11 because of the improved features to run JAVA in a instance inside a container  
+Used Java version 11 because of the improved features to run JAVA in a instance inside a container.  
 
 - Caffeine
 
-Used Caffeine for caching the alias to original url because the original url from an alias never changes I can cache this data to be more fast and don't rely on a conection to the database to do this work.
+Used Caffeine for caching the alias to original url because the original url from an alias never changes I can cache this data to be more fast and don't rely on a conection to the database to do this work. Caffeine is easier to setup cache because it's used the anotations of spring-cache and in addition to that with caffeine is possible to use ttl for cache. 
 
 ## How to run
 Local: 
