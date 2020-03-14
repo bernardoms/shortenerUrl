@@ -27,7 +27,7 @@ public class ShortenerController {
 
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
-    public ResponseEntity<URLShortener> create(@RequestBody @Validated URLShortenerDTO urlShortener,  UriComponentsBuilder uriComponentsBuilder) {
+    public ResponseEntity<String> create(@RequestBody @Validated URLShortenerDTO urlShortener,  UriComponentsBuilder uriComponentsBuilder) {
 
         var shortenedURL = shortenerService.createShortenerURL(urlShortener);
 
