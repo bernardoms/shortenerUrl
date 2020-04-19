@@ -24,7 +24,8 @@ Used Caffeine for caching the alias to original url because the original url fro
 ## How to run
 Local: 
   - from the root of the project cd deps.
-  - docker compose up -d for startup a mongo in a container.
+  - docker compose build for build an image of the project. After that docker-compose up -d to bring up a mongo container and app container.
+  - It's possible to add new relic license key into env of docker-compose to monitoring the app by new relic
   
   Cloud:
   

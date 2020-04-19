@@ -1,21 +1,6 @@
 version: '3'
 
 services:
-  mongo-express:
-    image: mongo-express
-    ports:
-      - 8081:8081
-    environment:
-      ME_CONFIG_BASICAUTH_USERNAME: test
-      ME_CONFIG_BASICAUTH_PASSWORD: test
-      ME_CONFIG_MONGODB_PORT: 27017
-      ME_CONFIG_MONGODB_ADMINUSERNAME: test
-      ME_CONFIG_MONGODB_ADMINPASSWORD: test
-    links:
-      - mongo
-    networks:
-      - mongo-compose-network
-
   mongo:
     image: mongo
     environment:
@@ -28,9 +13,13 @@ services:
       - "27017:27017"
     volumes:
       - ./mongo-volume:/data/db
-    networks:
-      - mongo-compose-network
 
-networks: 
-    mongo-compose-network:
-      driver: bridge
+  shortenerurl:
+    build:
+      context: ../
+    ports:
+      - "8080:8080"
+    environment:
+      JAVA_OPTS: "-Dspring.data.mongodb.uri=mongodb://test:test@mongo:27017/local?authSource=admin&authMechanism=SCRAM-SHA-1 -Dnewrelic.config.app_name=v1/shortenerurl -Dnewrelic.config.license_key="
+    depends_on:
+      - mongo
